@@ -53,7 +53,17 @@ function ContactForm() {
             name='subject'
             value={state.subject}
             placeholder='Enter subject'
-            onChance={onInputChange}
+            onChange={onInputChange}
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Message</Form.Label>
+          <Form.Control
+            type='text'
+            name='message'
+            value={state.message}
+            placeholder='Enter message'
+            onChange={onInputChange}
           />
         </Form.Group>
       </form>

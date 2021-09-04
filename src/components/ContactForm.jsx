@@ -46,6 +46,16 @@ function ContactForm() {
             onChange={onInputChange}
           />
         </Form.Group>
+        <Form.Group>
+          <Form.Label>Subject</Form.Label>
+          <Form.Control
+            type='text'
+            name='subject'
+            value={state.subject}
+            placeholder='Enter subject'
+            onChance={onInputChange}
+          />
+        </Form.Group>
       </form>
     </div>
   );

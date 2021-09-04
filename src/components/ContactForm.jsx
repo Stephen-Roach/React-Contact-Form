@@ -36,6 +36,16 @@ function ContactForm() {
             onChange={onInputChange}
           />
         </Form.Group>
+        <Form.Group>
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            type='text'
+            name='email'
+            value={state.email}
+            placeholder='Enter your email'
+            onChange={onInputChange}
+          />
+        </Form.Group>
       </form>
     </div>
   );

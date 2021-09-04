@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Button, FormControl } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 
 function ContactForm() {
@@ -39,6 +39,11 @@ function ContactForm() {
 
   return (
     <div>
+      {result && (
+        <p className={`${result.success ? 'success' : 'error'}`}>
+          {result.message}
+        </p>
+      )}
       <form onSubmit='sendEmail'>
         <Form.Group controlId='name'>
           <Form.Label>Full Name</Form.Label>
@@ -80,6 +85,9 @@ function ContactForm() {
             onChange={onInputChange}
           />
         </Form.Group>
+        <Button variant='primary' type='submit'>
+          Submit
+        </Button>
       </form>
     </div>
   );

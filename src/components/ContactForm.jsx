@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button, FormControl } from 'react-bootstrap';
+import axios from 'axios';
 
 function ContactForm() {
   const [state, setState] = useState({
@@ -9,9 +10,22 @@ function ContactForm() {
     message: '',
   });
 
+  const [result, setResult] = useState(null);
+
   function sendEmail(e) {
     e.preventDefault();
-    console.log('Checking to see if this works!');
+    axios
+      .post('/send', { ...state })
+      .then((response) => {
+        setResult(response.data);
+        setState({ name: '', email: '', subject: '', message: '' });
+      })
+      .catch(() => {
+        setResult({
+          success: false,
+          message: 'Something went wrong. Try again later',
+        });
+      });
   }
 
   function onInputChange(e) {

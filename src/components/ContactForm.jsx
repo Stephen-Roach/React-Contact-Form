@@ -44,7 +44,7 @@ function ContactForm() {
           {result.message}
         </p>
       )}
-      <form onSubmit='sendEmail'>
+      <form onSubmit={sendEmail}>
         <Form.Group controlId='name'>
           <Form.Label>Full Name</Form.Label>
           <Form.Control
